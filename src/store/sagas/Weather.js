@@ -1,4 +1,4 @@
-import { takeEvery, call, put, cancel, all } from "redux-saga/effects";
+import { takeEvery, call, put, all, cancel } from "redux-saga/effects";
 import API from "../api";
 import * as actions from "../actions";
 
@@ -50,10 +50,11 @@ function* watchFetchWeather(action) {
   yield put({ type: actions.WEATHER_ID_RECEIVED, id: location });
 }
 
+
 function* watchAppLoad() {
   yield all([
     takeEvery(actions.FETCH_WEATHER, watchFetchWeather),
-    takeEvery(actions.WEATHER_ID_RECEIVED, watchWeatherIdReceived)
+    takeEvery(actions.WEATHER_ID_RECEIVED, watchWeatherIdReceived),
   ]);
 }
 

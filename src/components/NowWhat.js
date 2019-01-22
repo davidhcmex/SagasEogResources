@@ -62,7 +62,7 @@ const NowWhat = props => {
             <Avatar>5</Avatar>
             <ListItemText>
               <Link to={"/googlemap"}>
-                App
+                App (Redux Sagas + Map + Polled Data Text Value)
               </Link>
             </ListItemText>
           </ListItem>

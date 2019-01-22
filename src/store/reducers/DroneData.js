@@ -7,18 +7,16 @@ let initialState = {
 
 const droneDataReducer = (state = initialState, action) => {
 
-    if (action.type === actions.REQUEST_DRONEDATA_PENDING)
-        return {
-            ...state,
-            loading: true,
-        }
 
-    if (action.type === actions.REQUEST_DRONEDATA_OK)
+
+    if (action.type === actions.REQUEST_DRONEDATA_SAGAS_RECEIVED)
         return {
             ...state,
-            loading:false,
+            loading: false,
             data: action.payload.data
         }
+
+ 
     return state;
 }
 
